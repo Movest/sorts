@@ -28,3 +28,21 @@ void QuickSort(std::vector<std::string>* array, int first, int last)
     }
     return;
 }
+
+void ShellSort(std::vector<std::string>* array, int size)
+{
+    int i, j, step;
+    std::string tmp;
+    for (step = size / 2; step > 0; step /= 2)
+        for (i = step; i < size; i++) {
+            tmp = (*array)[i];
+            for (j = i; j >= step; j -= step) {
+                if (tmp < (*array)[j - step]) {
+                    (*array)[j] = (*array)[j - step];
+                } else
+                    break;
+            }
+            (*array)[j] = tmp;
+        }
+    return;
+}
