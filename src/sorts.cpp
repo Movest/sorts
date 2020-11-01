@@ -46,3 +46,19 @@ void ShellSort(std::vector<std::string>* array, int size)
         }
     return;
 }
+void Swap(std::string* x, std::string* y)
+{
+    std::string temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void BubbleSort(std::vector<std::string>* arr, int size)
+{
+    int i, j;
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++)
+            if ((*arr)[j] > (*arr)[j + 1])
+                Swap(&(*arr)[j], &(*arr)[j + 1]);
+    }
+}
