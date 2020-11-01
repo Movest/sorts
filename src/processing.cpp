@@ -21,3 +21,14 @@ std::vector<std::string> ReadFile(const char path[])
     file.close();
     return strings_array;
 }
+
+void PrintArray(std::vector<std::string> array)
+{
+    for (size_t i = 0; i < array.size(); i++) {
+        if (i % 5 == 0) {
+            std::cout << std::endl;
+        }
+        std::cout << array[i] << "   ";
+    }
+    std::cout << std::endl;
+}

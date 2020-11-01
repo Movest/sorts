@@ -9,15 +9,9 @@ int main()
     std::vector<std::string> array;
     const char path[] = "./text/example.txt";
     array = ReadFile(path);
-    for (size_t i = 0; i < array.size(); i++) {
-        std::cout << array[i] << "   ";
-    }
-    std::cout << std::endl;
+    PrintArray(array);
     QuickSort(&array, 0, array.size() - 1);
     std::cout << "Sorted" << std::endl;
-    for (size_t i = 0; i < array.size(); i++) {
-        std::cout << array[i] << "   ";
-    }
-    std::cout << std::endl;
+    PrintArray(array);
     return 0;
 }
