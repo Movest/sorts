@@ -1,8 +1,39 @@
 #define CATCH_CONFIG_MAIN
 #include <catch.hpp>
 #include <sorts.hpp>
+#include <string>
+#include <vector>
 
-TEST_CASE("test", "[test]")
+TEST_CASE("QuickSort", "[test]")
 {
-    REQUIRE(1 == 1);
+    std::vector<std::string> array;
+    std::vector<std::string> sorted_array;
+    GIVEN("VECTOR TO SORT")
+    {
+        array = {"bad", "123", "OK", "4tr1"};
+        sorted_array = {"bad", "123", "OK", "4tr1"};
+        WHEN("Sorting")
+        {
+            QuickSort(&sorted_array, 0, sorted_array.size());
+            THEN("Compare")
+            {
+                std::string expected = "123";
+                REQUIRE(expected == sorted_array[0]);
+            }
+        }
+    }
+    GIVEN("VECTOR TO SORT")
+    {
+        array = {"bad", "ok3214", "OK", "4tr1"};
+        sorted_array = {"bad", "ok3214", "OK", "4tr1"};
+        WHEN("Sorting")
+        {
+            QuickSort(&sorted_array, 0, sorted_array.size());
+            THEN("Compare")
+            {
+                std::string expected = "4tr1";
+                REQUIRE(expected == sorted_array[0]);
+            }
+        }
+    }
 }
