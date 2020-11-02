@@ -28,3 +28,37 @@ void QuickSort(std::vector<std::string>* array, int first, int last)
     }
     return;
 }
+
+void ShellSort(std::vector<std::string>* array, int size)
+{
+    int i, j, step;
+    std::string tmp;
+    for (step = size / 2; step > 0; step /= 2)
+        for (i = step; i < size; i++) {
+            tmp = (*array)[i];
+            for (j = i; j >= step; j -= step) {
+                if (tmp < (*array)[j - step]) {
+                    (*array)[j] = (*array)[j - step];
+                } else
+                    break;
+            }
+            (*array)[j] = tmp;
+        }
+    return;
+}
+void Swap(std::string* x, std::string* y)
+{
+    std::string temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void BubbleSort(std::vector<std::string>* arr, int size)
+{
+    int i, j;
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++)
+            if ((*arr)[j] > (*arr)[j + 1])
+                Swap(&(*arr)[j], &(*arr)[j + 1]);
+    }
+}
