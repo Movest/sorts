@@ -1,3 +1,6 @@
 *.o
 bin/app
 bin/appTest
+src/.vscode
+test/.vscode
+.vscode
