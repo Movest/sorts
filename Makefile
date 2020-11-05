@@ -35,4 +35,4 @@ runTest:
 	$(BIN_DIR)$(EXECUTABLE_TEST)
 
 clear: 
-	rm -rf $(BUILD_DIR)*.o $(BIN_DIR)$(EXECUTABLE)
+	rm -rf $(BUILD_DIR)*.o $(BIN_DIR)$(EXECUTABLE) $(BIN_DIR)$(EXECUTABLE_TEST) $(BUILD_TEST_DIR)*.o
